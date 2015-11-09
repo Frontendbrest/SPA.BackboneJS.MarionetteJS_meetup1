@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/bright/styles/screen.css">
+	<style>
+		.slide::after {
+			display: none;
+		}
+		.slide>div {
+			padding-top: 50px;
+		}
+		.slide h1 {
+			font: 72px 'PT Sans Narrow',sans-serif;
+		}
+		.slide pre code {
+			line-height: 1.2;
+		}
+		.slide pre code::before {
+			position: static;
+			margin: 0;
+		}
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Разработка SPA</h1>
+		<p>Backbone JS. Marionette JS.</p>
+	</header>
+	<section class="slide"><div>
+		<h1>Разработка SPA</h1>
+		<h2>Backbone JS. Marionette JS.</h2>
+		<p style="text-align: right; margin-top: 100px;">Автор: Михаил Ямаев</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Что же такое SPA?</h2>
+		<p><b>SPA</b> (Single Page Application) - это веб-приложение, которое выполняется непосредственно на стороне клиента в Web-браузере.</p>
+		<p><b>Цель:</b> обеспечть большую интерактивность приложения, такую как в desktop app.</p>
+		<p>При любых действиях пользователя страница не перезагружается, а данные подтягиваются динамически с помощью AJAX запросов.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>“Спагетти код” на JQuery или...</h2>
+		<img src="img/frameworks.png" />
+	</div></section>
+	<section class="slide"><div>
+		<h2>MVC</h2>
+		<img src="img/mvc.png" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Преимущества Backbone</h2>
+		<ol>
+			<li>Малый размер (7.3 kB, minified)</li>
+			<li class="next">Низкий порог вхождения</li>
+			<li class="next">Большое сообщество</li>
+			<li class="next">Куча туториалов, в том числе видео</li>
+			<li class="next">Гибкость. Наиболее гибкий из фреймфорков; за счет того, что не навязывает свою архитектуру и многие решения остаются за разработчиком</li>
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Из чего состоит Backbone?</h2>
+		<p><b>Model</b> -  объект, содержащий данные о какой-либо конкретной сущности.</p>
+		<img src="img/model.png" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Из чего состоит Backbone?</h2>
+		<p><b>Collection</b> - это упорядоченный наборы моделей.</p>
+		<img src="img/collection.png" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Из чего состоит Backbone?</h2>
+		<p><b>View</b> - отвечает за организацию интерфейса.</p>
+		<img src="img/view.png" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Из чего состоит Backbone?</h2>
+		<p><b>Template</b> - HTML код с данными модели.</p>
+		<img src="img/template.png" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Из чего состоит Backbone?</h2>
+		<p><b>Router</b> - отвечает за сохранение состояний.</p>
+		<img src="img/router.png" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Backbone как MVC фреймворк</h2>
+		<p><b>View</b> - контроллер. Отвечает за обработку событий. Обменивается данными между View и Model.</p>
+		<p><b>Model</b> - модель</p>
+		<p><b>Template</b> - представление.</p>
+		<p class="note">На самом деле Backbone скорее MV* фреймворк.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>REST API</h2>
+		<img src="img/rest-api-design.jpg" style="width: 100%;" alt="">
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>НО ЭТО ВСЕ ОБМАН!</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Недостатки Backbone JS</h2>
+		<ol>
+			<li>Утечки памяти</li>
+			<li class="next">Не самодостаточен. Мало чего можно сделать “из коробки”.</li>
+			<li class="next">Гибкость. Нет определенной структуры приложения.</li>
+			<li class="next">Написание большого кол-ва шаблонного кода</li>
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Marionette JS</h2>
+		<ol>
+			<li>Решает проблему с памятью</li>
+			<li class="next">Реализует расширенную коллекцию представлений, значительно упрощающих написание кода</li>
+			<li class="next">Включает в себя реализации некоторых шаблонов проектирования</li>
+			<li class="next">Позволяет более качественно структурировать код</li>
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Marionette представления</h2>
+		<ul>
+			<li><b>Marionette.View</b> — базовый класс для всех представлений Marionette</li>
+			<li class="next"><b>Marionette.ItemView</b> — представление для отрисовки данных модели</li>
+			<li class="next"><b>Marionette.CollectionView</b> — представление, для отрисовки коллекции. Обычно используется совместно с ItemView</li>
+			<li class="next"><b>Marionette.CompositeView</b> — аналогично CollectionView, но добавляет свой шаблон для отрисовки контейнера</li>
+			<li class="next"><b>Marionette.Layout</b> — отображает шаблон + содержит менеджер регионов</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Паттерн “модуль” в JS</h2>
+		<img src="img/js-module.png" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Модули в Marionette JS</h2>
+		<img src="img/marionette-module.png" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Уменьшаем связанность. Добавляем “посредника”</h2>
+		<img src="img/mediator.gif" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>AMD</h2>
+		<p>Асинхронное объявление модулей</p>
+		<ul>
+			<li>разделение файлов для более простого их обслуживания</li>
+			<li class="next">удовлетворение зависимостей</li>
+			<li class="next">экспорт переменных в глобальную область видимости</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Require JS - одна из реализаций AMD</h2>
+		<img src="img/amd-module.png" alt="">
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>ВОПРОСЫ?</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Спасибо за внимание</h2>
+		<p>Михаил Ямаев</p>
+		<ul>
+			<li>VK: <a href="http://vk.com/yamixail">vk.com/yamixail</a></li>
+			<li>E-mail: <a href="mailto:yamixail@gmail.com">yamixail@gmail.com</a></li>
+		</ul>
+	</div></section>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
